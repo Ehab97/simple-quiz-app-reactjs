@@ -1,38 +1,219 @@
-.App {
+:root {
+  --primaryColor: #028090;
+  --secondaryColor: #e4fde1;
+}
+
+.container{
+  width: 1200px;
+  margin: 0 auto;
+}
+h2{
+  text-align: center;
+  text-transform: capitalize;
+  font-family: cursive;
+}
+h3{
+
+}
+ul{
+list-style: decimal;
+    list-style-position: inside;
+    border-bottom: 2px dotted #ededed;
+    padding-bottom: 20px;
+    width: 90%;
+    
+}
+.controlers{
+  width: 100%;
+  margin: 10px auto;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+ul li{
+border-radius:2px;
+background: #ededed;
+padding: 5px;
+margin-bottom: 5px;
+}
+ul li::hover{
+  background: yellow;
+}
+.result{
+  text-align: center;
+  display: block;
+  font-size: larger;
+  font-weight: bolder;
+  color: var(--primaryColor);
+}
+.bg-green,.bg-red{
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.bg-green{
+  background: greenyellow;
+}
+.bg-red{
+  background-color: crimson;
+}
+.modal-wrapper {
+  background: white !important;
+  border: 1px solid #d0cccc !important;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17) !important;
+  margin: 0 auto !important;
+  transition: all .8s !important;
+  width: 450px;
+  border-radius: 10px !important;
+  z-index: 100  !important;
+  position: fixed !important;
+  height: 450px !important;
+  top: 3vh !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  overflow: hidden;
+  /* overflow-y: scroll; */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.modal-header {
+  background: #e2e2e2;
+  height: 40px;
+  line-height: 40px;
+  padding: 5px 20px;
+  text-align: right;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.modal-header h2 {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+.modal-body {
+  padding: 10px 15px;
+  /* text-align: center; */
+  height: 300px;
+}
+
+.modal-body input  {
+  border-width: 1px;
+  font-size: .875rem;
+  line-height: 1.25rem;
+  padding-top: 0.25rem;
+  color: rgba(17,24,39);
+      padding-bottom: 0.25rem;
+  padding-left: 0.75rem;
+    padding-right: 0.75rem;
+border-color: rgba(209,213,219);
+border-radius: 0.375rem;
+min-width: 70%;
+}
+.modal-body li{
+  background: none;
+  padding: none;
+
+}
+
+.close-modal-btn {
   color: white;
+  cursor: pointer;
+  float: right;
+  font-size: 30px;
+  margin: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.close-modal-btn:hover {
+  color: black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn-cancel {
+  background-color: #b71c1c;
+  float: left;
 }
+
+.btn-continue {
+  background-color: #1b5e20;
+  float: right;
+}
+
+.back-shed {
+  background-color: rgba(48, 49, 48, 0.42);
+  height: 400vh;
+  position: fixed;
+  transition: all 1.3s;
+  width: 100%;
+  width: 100vw;
+  z-index: 99;
+  top: -40px;
+}
+
+.open-modal-btn {
+  margin: 15px;
+  padding: 10px;
+}
+@media only screen and (max-width: 768px) {
+  .modal-wrapper{
+    overflow-x: auto;
+    overflow-y: scroll;
+    overflow: hidden;
+  }
+  .modal-body h3 {
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+  }
+  @media only screen and (max-width: 600px) {
+    
+    .modal-wrapper-auth{
+      width: 95% !important;
+    }
+  }
+  @media only screen and (max-width: 480px) {
+    /* .modal-wrapper {
+      width: 90% !important;
+      top: 3%;
+      height: 90% !important;
+      overflow: auto !important;
+      overflow-y: scroll;
+      left: 50% !important;
+     transform: translateX(-50%) !important;
+    } */
+    /* .modal-body h3 {
+      font-size: 1rem;
+    } */
+    .modal-wrapper{
+      width: 90%;
+    }
+  .container{
+    width: 90%;
+    margin: 0 auto;
+  }
+  .container ul{
+    width: auto;
+    padding-inline-start: 0;
+  }
+  }
+  .btn {
+    font-family: "Ubuntu", sans-serif;
+    position: relative;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 2;
+    height: 50px;
+    transition: all 200ms linear;
+    border-radius: 4px;
+    width: 240px;
+    letter-spacing: 1px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    align-self: center;
+    border: none;
+    cursor: pointer;
+    background-color: var(--primaryColor);
+    color: var(--secondaryColor);
+    fill: var(--secondaryColor);
+    box-shadow: 0 12px 35px 0 rgba(16, 39, 112, 0.25);
+    outline: 0;
+    text-transform: capitalize;
+  }
